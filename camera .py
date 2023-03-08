@@ -1,3 +1,5 @@
+
+
 import cv2
 from email.mime.image import MIMEImage
 from email.mime.text import MIMEText
@@ -8,10 +10,10 @@ from smtplib import SMTP
 import time
 
 host = 'smtp.qq.com' #邮箱的接口
-port = '25' #端口
+port = '465' #端口
 pwd = 'neelrhh88******ch' #授权码
-sender = '邮箱地址' #发送方
-receiver = "邮箱地址" #接收方
+sender = 'she**when@qq.com' #发送方
+receiver = "imsalt(At)icloud.com" #接收方
 
 path = r'./' #图像保存路径
 images = time.strftime("%Y-%m-%d-%H_%M_%S",time.localtime())
@@ -21,7 +23,7 @@ def GetPicture():
     拍照保存图像
     """
     #创建一个窗口camera
-    cv2.namedWindow('camera',1) #'1' 表示窗口不能随意拖动
+    # cv2.namedWindow('camera',1) #'1' 表示窗口不能随意拖动
     #调用摄像头
     cap = cv2.VideoCapture(0)
     ret,frame = cap.read() #读取摄像头内容
@@ -31,7 +33,7 @@ def GetPicture():
     #释放摄像头
     cap.release()
     #关闭窗口
-    cv2.destroyWindow("camera")
+    # cv2.destroyWindow("camera")
 
 def SetMsg():
     '''
